@@ -50,7 +50,7 @@ public class SpringExceptionTranslatorTest {
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.executeQuery();
         } catch (SQLException e) {
-            assertThat(e.getErrorCode()).isEqualTo(42122);
+            assertThat(e.getErrorCode()).isEqualTo(1054);
             //org.springframework.jdbc.support.sql-error-codes.xml
             SQLExceptionTranslator exTranslator = new SQLErrorCodeSQLExceptionTranslator(dataSource);
             //org.springframework.jdbc.BadSqlGrammarException
